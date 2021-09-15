@@ -1,3 +1,5 @@
+import 'package:app_filmes_dart_week_4_edicao/application/bindings/application_bindings.dart';
+import 'package:app_filmes_dart_week_4_edicao/modules/login/login_module.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/splash/splash_module.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
@@ -21,7 +23,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      getPages: [...SplashModule().routes],
+      initialBinding: ApplicationBindings(),
+      getPages: [
+        ...SplashModule().routes,
+        ...LoginModule().routes,
+      ],
     );
   }
 }
