@@ -1,4 +1,6 @@
 import 'package:app_filmes_dart_week_4_edicao/application/bindings/application_bindings.dart';
+import 'package:app_filmes_dart_week_4_edicao/application/ui/filmes_app_ui_config.dart';
+import 'package:app_filmes_dart_week_4_edicao/modules/home/home_module.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/login/login_module.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/splash/splash_module.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -19,14 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: FilmesAppUiConfig.title,
+      theme: FilmesAppUiConfig.theme,
       initialBinding: ApplicationBindings(),
       getPages: [
         ...SplashModule().routes,
         ...LoginModule().routes,
+        ...HomeModule().routes,
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:app_filmes_dart_week_4_edicao/application/auth/auth_service.dart';
 import 'package:app_filmes_dart_week_4_edicao/repositories/login/login_repository.dart';
 import 'package:app_filmes_dart_week_4_edicao/repositories/login/login_repository_impl.dart';
 import 'package:app_filmes_dart_week_4_edicao/services/login/login_service.dart';
@@ -12,5 +13,6 @@ class ApplicationBindings implements Bindings {
       () => LoginServiceImpl(loginRepository: Get.find()),
       fenix: true,
     );
+    Get.put(AuthService()).init();
   }
 }
