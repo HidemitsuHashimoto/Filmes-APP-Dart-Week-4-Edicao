@@ -2,6 +2,7 @@ import 'package:app_filmes_dart_week_4_edicao/application/ui/filmes_app_icons_ic
 import 'package:app_filmes_dart_week_4_edicao/application/ui/theme_extensions.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/favorites/favorites_page.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/home/home_controller.dart';
+import 'package:app_filmes_dart_week_4_edicao/modules/movies/movies_bindings.dart';
 import 'package:app_filmes_dart_week_4_edicao/modules/movies/movies_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,6 +36,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => MoviesPage(),
+              binding: MoviesBindings(),
             );
           }
 
